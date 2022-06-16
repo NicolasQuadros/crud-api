@@ -4,6 +4,11 @@ module.exports = app => {
     
     // Find all (filter by contractee/contractor) [paginated]
     router.get("/", contract.findAll);
+    // Create
+    router.post("/", contract.create);
+
+    // Delete with id
+    router.delete("/:id", contract.delete);
 
     app.use('/contracts', router);
   };
